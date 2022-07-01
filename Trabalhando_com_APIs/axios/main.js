@@ -54,7 +54,15 @@ function updateUser(id, userUpdated) {
         .catch(error => console.error(error))
 }
 
+// Deletar usuário.
+function deleteUser(id) {
+    axios.delete(`${url}/${id}`)
+        .then(response => console.log(response))
+        .catch(error => console.error(error))
+};
+
 getUsers();
 getUser();
 addNewUser(newUser);
-updateUser(4, userUpdated);
+updateUser(4, userUpdated); // Indicar qual ID a ser editado.
+deleteUser(3); // indica qual ID a ser deletado.
